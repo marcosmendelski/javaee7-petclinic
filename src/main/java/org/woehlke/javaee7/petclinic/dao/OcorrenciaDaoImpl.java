@@ -12,6 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import org.woehlke.javaee7.petclinic.entities.Ocorrencia;
+import org.woehlke.javaee7.petclinic.entities.Specialty;
 import org.woehlke.javaee7.petclinic.entities.Vet;
 
 /**
@@ -30,23 +31,28 @@ public class OcorrenciaDaoImpl implements OcorrenciaDao {
         List<Ocorrencia> list =  o.getResultList();
         return list;
     }
-    @Override
     public void addNew(Ocorrencia oc) {
         log.info("addNewVet: "+oc.toString());
         entityManager.persist(oc);
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public Ocorrencia findById(long id) {
-        Ocorrencia oc = entityManager.find(Ocorrencia.class, id);
-        return oc;
+  
+
+    public void update(Ocorrencia oc) {
+        entityManager.merge(oc);
     }
 
     @Override
-    public void update(Ocorrencia oc) {
-        entityManager.merge(oc);
-    }}
+    public void delete(long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Specialty findById(long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
     
     
 

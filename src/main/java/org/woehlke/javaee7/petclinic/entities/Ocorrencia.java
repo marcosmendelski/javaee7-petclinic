@@ -5,14 +5,18 @@
  */
 package org.woehlke.javaee7.petclinic.entities;
 
+import javax.ejb.Stateless;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Store;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -20,6 +24,10 @@ import org.hibernate.validator.constraints.NotEmpty;
  *
  * @author 09200199
  */
+@Entity
+@Table(name = "ocorrencias")
+@Indexed
+@Stateless
 public class Ocorrencia {
     
      @Id

@@ -22,6 +22,11 @@ public class Specialty implements Comparable<Specialty> {
     @NotEmpty
     @Column(name = "name")
     private String name;
+    
+    @NotEmpty
+    @Column(name = "descricao")
+    private String descricao;
+
 
     public Long getId() {
         return id;
@@ -44,6 +49,14 @@ public class Specialty implements Comparable<Specialty> {
 		return this.name.compareTo(other.getName());
 	}
 
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+     
 
     @Override
     public boolean equals(Object o) {

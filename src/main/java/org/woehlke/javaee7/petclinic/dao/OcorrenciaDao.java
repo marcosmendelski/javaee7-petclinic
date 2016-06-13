@@ -5,17 +5,24 @@
  */
 package org.woehlke.javaee7.petclinic.dao;
 
+import java.util.List;
 import org.woehlke.javaee7.petclinic.entities.Ocorrencia;
+import org.woehlke.javaee7.petclinic.entities.Specialty;
 
 /**
  *
- * @author 09200199
+ * @author marcos
  */
 public interface OcorrenciaDao {
     
-    void addNew (Ocorrencia oc);
-    
-   Ocorrencia findById (long ocId);
+     List<Ocorrencia> getAll();
+
+    void delete(long id);
+
+    void addNew(Ocorrencia oc);
+
+    Specialty findById(long id);
 
     void update(Ocorrencia oc);
+    
 }

@@ -3,6 +3,7 @@ package org.woehlke.javaee7.petclinic.dao;
 import org.woehlke.javaee7.petclinic.entities.Owner;
 
 import java.util.List;
+import javax.ejb.Local;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,6 +12,7 @@ import java.util.List;
  * Time: 09:38
  * To change this template use File | Settings | File Templates.
  */
+@Local
 public interface OwnerDao {
 
     List<Owner> getAll();

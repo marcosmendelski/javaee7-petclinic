@@ -15,6 +15,8 @@ import javax.faces.context.FacesContext;
 import java.io.Serializable;
 import java.util.List;
 
+import org.woehlke.javaee7.petclinic.entities.Ocorrencia;
+
 /**
  * Created with IntelliJ IDEA.
  * User: tw
@@ -27,8 +29,9 @@ import java.util.List;
 public class SpecialtyController implements Serializable {
 
     @EJB
+    
     private SpecialtyDao specialtyDao;
-
+    
     private Specialty specialty;
 
     private SortOrder specialtySortOrder=SortOrder.ascending;
@@ -67,6 +70,7 @@ public class SpecialtyController implements Serializable {
         specialtyDao.addNew(this.specialty);
         return "specialties.jsf";
     }
+    
 
     public String getEditForm(long id){
         this.specialty = specialtyDao.findById(id);
