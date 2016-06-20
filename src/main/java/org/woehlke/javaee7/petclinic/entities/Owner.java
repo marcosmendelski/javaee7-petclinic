@@ -43,23 +43,22 @@ public class Owner {
     private String firstName;
 
     @Column(name = "last_name")
-    @NotEmpty
+    
     @Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
     private String lastName;
 
     @Column(name = "address")
-    @NotEmpty
+    
     @Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
     private String address;
 
     @Column(name = "city")
-    @NotEmpty
+    
     @Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
     private String city;
 
     @Column(name = "telephone")
-    @NotEmpty
-    @Digits(fraction = 0, integer = 10)
+    
     private String telephone;
 
     @IndexedEmbedded

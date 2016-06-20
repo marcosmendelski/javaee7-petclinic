@@ -121,13 +121,14 @@ public class OwnerController implements Serializable {
 
     public String getNewOwnerForm(){
         this.owner = new Owner();
-        return "newOwner.jsf";
+        return "newOcorrencia.jsf";
     }
+    
 
     public String saveNewOwner(){
         ownerDao.addNew(this.owner);
         this.ownerList = ownerDao.getAll();
-        return "owners.jsf";
+        return "ocorrencias.jsf";
     }
 
     public String showOwner(long id){
